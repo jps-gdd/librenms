@@ -55,9 +55,9 @@
                 @elseif( $color_only_select == 2)
                         <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }}</span>
                 @elseif( $color_only_select == 3 )
-                        <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }} ({{$service->stateName}})</span>
-                @else
                         <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }}</span>
+                @else
+                        <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }} ({{$service->stateName}})</span>
         @endif
         @else
             <div class="availability-map-oldview-box-{{ $service->stateName }}" style="width:{{ $tile_size }}px;height:{{ $tile_size }}px;"></div>
