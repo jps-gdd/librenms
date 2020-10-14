@@ -2066,6 +2066,7 @@ label {
 .widget-availability-host {
   float:left;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .widget-availability-host a:hover {
@@ -2073,8 +2074,9 @@ label {
 }
 
 .widget-availability-service {
-  float:right;
+  float:left;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .label-font-border {
