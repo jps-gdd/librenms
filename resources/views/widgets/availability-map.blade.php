@@ -13,16 +13,6 @@
     @endif
 </div>
 @endif
-
-@if($services_totals)
-<div class="widget-availability-service">
-    <span>@lang('Total services')</span>
-    <span class="label label-success label-font-border label-border">@lang('up'): {{ $services_totals['up'] }}</span>
-    <span class="label label-warning label-font-border label-border">@lang('warn'): {{ $services_totals['warn'] }}</span>
-    <span class="label label-danger label-font-border label-border">@lang('down'): {{ $services_totals['down'] }}</span>
-</div>
-@endif
-
 <br style="clear:both;">
 
 @foreach($devices as $device)
@@ -46,6 +36,17 @@
         @endif
     </a>
 @endforeach
+
+<br style="clear:both;">
+@if($services_totals)
+
+<div class="widget-availability-service">
+    <span>@lang('Total services')</span>
+    <span class="label label-success label-font-border label-border">@lang('up'): {{ $services_totals['up'] }}</span>
+    <span class="label label-warning label-font-border label-border">@lang('warn'): {{ $services_totals['warn'] }}</span>
+    <span class="label label-danger label-font-border label-border">@lang('down'): {{ $services_totals['down'] }}</span>
+</div>
+@endif
 
 @foreach($services as $service)
     <a href="@deviceUrl($service->device, ['tab' => 'services'])" title="{{ $service->device->displayName() }} - {{ $service->service_type }} - {{ $service->service_desc }}">
