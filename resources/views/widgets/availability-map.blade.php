@@ -46,6 +46,7 @@
     <span class="label label-warning label-font-border label-border">@lang('warn'): {{ $services_totals['warn'] }}</span>
     <span class="label label-danger label-font-border label-border">@lang('down'): {{ $services_totals['down'] }}</span>
 </div>
+<br style="clear:both;">
 @endif
 
 @foreach($services as $service)
