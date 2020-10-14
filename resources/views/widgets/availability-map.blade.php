@@ -37,7 +37,7 @@
             @if($color_only_select == 3)
                 <span class="label {{ $device->labelClass }} widget-availability label-font-border">@lang($device->sysName)</span>
             @else
-                <span class="label {{ $device->labelClass }} widget-availability label-font-border">@lang($device->stateName)</span>
+                <span class="label {{ $device->labelClass }} widget-availability label-font-border">@lang($device->hostname) (@lang($device->stateName))</span>
             @endif
             @endif
             @endif
