@@ -50,11 +50,15 @@
 @foreach($services as $service)
     <a href="@deviceUrl($service->device, ['tab' => 'services'])" title="{{ $service->device->displayName() }} - {{ $service->service_type }} - {{ $service->service_desc }}">
         @if($type == 0)
-            @if($color_only_select)
-                <span class="label {{ $service->labelClass }} widget-availability-fixed widget-availability label-font-border"> </span>
-            @else
-                <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->service_type }} - {{ $service->stateName }}</span>
-            @endif
+                @if($color_only_select == 1)
+                        <span class="label {{ $service->labelClass }} widget-availability-fixed widget-availability label-font-border"> </span>
+                @elseif( $color_only_select == 2)
+                        <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }}</span>
+                @elseif( $color_only_select == 3 )
+                        <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }} ({{$service->stateName}})</span>
+                @else
+                        <span class="label {{ $service->labelClass }} widget-availability label-font-border">{{ $service->device->displayName()}} - {{$service->service_type }}</span>
+        @endif
         @else
             <div class="availability-map-oldview-box-{{ $service->stateName }}" style="width:{{ $tile_size }}px;height:{{ $tile_size }}px;"></div>
         @endif
